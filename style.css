@@ -1,0 +1,285 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Varela Round", sans-serif;
+    color : #fff;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #1d0033;
+}
+
+/* COLOR THEME */
+:root{
+    --primary : rgb(127, 113, 255);
+    --bg : rgb(52, 46, 95);
+}
+
+/* ___________________________________________________________________________________________________________________________ */
+
+
+/* UTILITY CLASSES */
+.container {
+    max-width: 62vw;
+    margin: 0 auto;
+}
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.flex{
+    display: flex;
+}
+.item-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.align-center{
+    align-items: center;
+}
+.linethrough{
+    text-decoration: line-through;
+}
+
+/* ___________________________________________________________________________________________________________________________ */
+
+
+/* TODO APP STYLING */
+main{
+    width: 100%;
+    height: 100vh;
+}
+.todo{
+    width: 70vw;
+    border: 1px solid var(--primary);
+}
+/* TODO TITLE STYLING */
+.todo .title {
+    background-color:  var(--primary);
+    width: 100%;
+    padding: 1rem 0;
+}
+.title > h1{
+    text-align: center;
+    font-size : 3vw;
+}
+/* ___________________________________________________________________________________________________________________________ */
+
+
+
+/* TODO INPUT CONTAINER STYLING */
+.input-container{
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    padding: 1.5vw 4vw;
+}
+.input-container input{
+    flex : 1;
+    height: 2vw;
+    padding: 1.5vw;
+    border : 1px solid  var(--primary);
+    background: transparent;
+    color : var(--primary);
+    outline: none;
+    background-color: var(--bg);
+    font-size: 1.2rem;
+    /* box-shadow: inset 1px 1px 10px  #0c012ca0; */
+}
+.input-container button{
+    background-color:  var(--primary);
+    padding: 0 2vw;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+/* ___________________________________________________________________________________________________________________________ */
+
+
+/* TODO LIST ITEMS STYLING */
+.todo-items{
+    width: 100%;
+    padding:  2vw 1vw;
+}
+
+.todo-items ul li{
+    list-style: none;
+    border: 1px solid var(--primary);
+    background-color: var(--bg);
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    font-weight: 100;
+    position: relative;
+    margin-bottom: 1rem;
+}
+.todo-items ul li input {
+    background: #000;
+    margin-right: 1rem;
+}
+.todo-items ul h2{
+    font-size: 2vw;
+    text-align: center;
+}
+.edit-btn{
+    color : var(--primary);
+    background-color: transparent;
+    position: absolute;
+    right : 6vw;
+    font-size: 1rem;
+}
+.delete-btn{
+    background : transparent;
+    color: var(--primary);
+    position: absolute;
+    right : 3vw;
+}
+
+
+/* ___________________________________________________________________________________________________________________________ */
+
+/* RESPONSIVE DESIGN */
+
+/* For tablets and larger mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90vw; /* Allow the container to take up more width */
+        padding: 0 2vw; /* Adjust horizontal padding */
+    }
+
+    .todo {
+        width: 95vw; /* Make the todo container wider */
+    }
+
+    .title > h1 {
+        font-size: 5vw; /* Adjust title font size */
+    }
+
+    .input-container {
+        padding: 2vw 5vw; /* Adjust input container padding */
+        flex-direction: column; /* Stack input and button vertically */
+    }
+
+    .input-container input {
+        height: auto; /* Allow input height to adjust */
+        padding: 2vw;
+        margin-bottom: 1vw; /* Add some space between input and button */
+        font-size: 1.1rem; /* Adjust font size */
+    }
+
+    .input-container button {
+        padding: 1.5vw 3vw;
+        font-size: 1.1rem;
+    }
+
+    .todo-items {
+        padding: 3vw 2vw; /* Adjust todo items padding */
+    }
+
+    .todo-items ul li {
+        padding: 1vw 1.5vw;
+        font-size: 0.9rem; /* Adjust list item font size */
+        margin-bottom: 1.5vw;
+    }
+
+    .todo-items ul h2 {
+        font-size: 3vw; /* Adjust "No Items" heading size */
+    }
+
+    .edit-btn {
+        right: 10vw; /* Adjust button position */
+        font-size: 0.9rem;
+    }
+
+    .delete-btn {
+        right: 5vw; /* Adjust button position */
+        font-size: 0.9rem;
+    }
+}
+
+/* For smaller mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .title > h1 {
+        font-size: 7vw; /* Further adjust title font size */
+    }
+
+    .input-container {
+        padding: 3vw 6vw; /* Adjust input container padding */
+    }
+
+    .input-container input {
+        font-size: 1rem; /* Further adjust font size */
+        padding: 2.5vw;
+        margin-bottom: 2vw;
+    }
+
+    .input-container button {
+        font-size: 1rem;
+        padding: 2vw 4vw;
+    }
+
+    .todo-items ul li {
+        font-size: 0.8rem; /* Further adjust list item font size */
+        padding: 1.2vw 1.8vw;
+        margin-bottom: 2vw;
+    }
+
+    .todo-items ul h2 {
+        font-size: 4vw; /* Further adjust "No Items" heading size */
+    }
+
+    .edit-btn {
+        right: 12vw; /* Further adjust button position */
+        font-size: 0.8rem;
+    }
+
+    .delete-btn {
+        right: 6vw; /* Further adjust button position */
+        font-size: 0.8rem;
+    }
+}
+
+/* You can add more media queries for larger screens if needed */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 50vw; /* Optionally reduce max-width on very large screens */
+    }
+
+    .title > h1 {
+        font-size: 2.5vw; /* Adjust title font size for larger screens */
+    }
+
+    .input-container input {
+        height: 3vw; /* Adjust input height for larger screens */
+        padding: 1vw;
+        font-size: 1.1rem;
+    }
+
+    .input-container button {
+        padding: 0 1.5vw;
+        font-size: 1.1rem;
+        height: 3vw;
+    }
+
+    .todo-items ul li {
+        font-size: 1.1rem;
+        padding: 0.6rem 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .edit-btn {
+        right: 5vw;
+        font-size: 1.1rem;
+    }
+
+    .delete-btn {
+        right: 3vw;
+        font-size: 1.1rem;
+    }
+}
